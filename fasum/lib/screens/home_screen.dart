@@ -5,10 +5,8 @@ import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
-
   Future<void> signOut(BuildContext context) async {
     await FirebaseAuth.instance.signOut();
-
     Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (context) => SignInScreen()));
   }
@@ -21,15 +19,15 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         actions: [
           IconButton(
-              onPressed: () {
-                signOut(context);
-              },
-              icon: const Icon(Icons.logout),
+            onPressed: () {
+              signOut(context);
+            },
+            icon: const Icon(Icons.logout),
           ),
         ],
       ),
       body: const Center(
-        child: Text('You have logged in'),
+        child: Text('You have logged In'),
       ),
     );
   }
